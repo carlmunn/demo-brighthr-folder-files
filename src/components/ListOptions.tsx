@@ -20,17 +20,19 @@ const ListOptions = function(props: {onChange: (opts: any)=>void }){
           name='filter-name'
           type="text"
           placeholder="Filter names"
+          tabIndex={1}
         />
       </section>
 
       <section id='order-by'>
-        <label htmlFor="order-by">Order By</label>
+        <label htmlFor="order-by">Order Files By</label>
         <select id='order-by'
                 value={orderBy}
                 name='order-by'
-                onChange={ (evt) => { setOrderBy(evt.target.value) } }>
+                onChange={ (evt) => { setOrderBy(evt.target.value) } }
+                tabIndex={2}>
           <option value="name">Name</option>
-          <option value="date">Date</option>
+          <option value="added">Newest First</option>
         </select>
       </section>
     </section>

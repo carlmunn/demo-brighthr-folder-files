@@ -23,8 +23,8 @@ export type NoteType = 'folder' | 'doc' | 'csv' | 'pdf'
 
 export interface Node {
   type: NoteType;
+  hidden?: boolean; // Set by React components, not part of data JSON
   name: string;
   files?: Node[];
-  added?: string; // Ex: '2017-05-03'
+  added?: string;   // Ex: '2017-05-03'
 }
-

@@ -4,11 +4,11 @@ import {type Node} from '@/types/nodes'
 import NodeList from '@/components/NodeList'
 import {logDebug} from '@/utilities/logging'
 import ListOptions from '@/components/ListOptions'
+import {filterNodesByName, orderNodesBy} from '@/utilities/nodes'
 
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
-
 
 // Features ignored based on simplicity of task
 //
@@ -17,12 +17,11 @@ import './App.css'
 // Handle empty Node arrays
 
 function App() {
-  const [nodes, setNodes] = useState([])
+  const [nodes, setNodes] = useState<Node[]>([])
 
   // TODO: Open/Close list (details/summary HTML tags should do)
   // TODO: Filter by filename
   // TODO: Add ordering on 'select' change
-  const [orderBy, setOrderBy] = useState('name')
 
   // Note: useMemo hook for API calls if caching is necessary. invalidation would
   //       need consideration too
@@ -37,10 +36,12 @@ function App() {
   const onChange = function({name, orderBy} : {name: string, orderBy: string}) : void {
     console.info('Called onChange', {name, orderBy})
 
-    if(name.length) { console.info('FILTER BY NAME:', name) }
-    if(orderBy.length) { console.info('ORDER BY:', orderBy) }
+    let newNodes : Node[]
 
-    setNodes([...nodes])
+    newNodes = filterNodesByName(nodes, name)
+    newNodes = orderNodesBy(newNodes, orderBy)
+    console.info('newNodes', newNodes)
+    setNodes(newNodes)
   }
 
   return (
@@ -50,7 +51,7 @@ function App() {
       <p> (<a href='https://github.com/brighthr/Front-End-Tech-Tasks/blob/main/junior-and-middleweight.md' target='_blank'>GitHub</a>)</p>
       <code>node COUNT={nodes.length}</code>
       <ListOptions onChange={onChange}/>
-      <NodeList name='root' nodes={nodes} orderBy={ orderBy }/>
+      <NodeList name='root' nodes={nodes} orderBy={ 'name' }/>
     </>
   )
 }
