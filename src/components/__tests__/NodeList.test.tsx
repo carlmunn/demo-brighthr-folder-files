@@ -4,6 +4,8 @@ import { describe, it, expect, vi } from 'vitest'
 
 import NodeList from '@/components/NodeList'
 
+// TODO: Tests: Changing order. Showing/Hiding nodes
+
 describe('NodeList', () => {
   it('renders NodeList', async () => {
     render(<NodeList />)

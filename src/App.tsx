@@ -40,7 +40,7 @@ function App() {
       <p> (<a href='https://github.com/brighthr/Front-End-Tech-Tasks/blob/main/junior-and-middleweight.md' target='_blank'>GitHub</a>)</p>
       <code>node COUNT={nodes.length}</code>
 
-      <section>
+      <section id='order-by'>
         <label htmlFor="order-by">Order</label>
         <select name='order-by'>
           <option value="name">Name</option>

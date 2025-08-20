@@ -6,15 +6,83 @@
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 2rem;
+}
+
+code {
+  display: block;
+}
+
+h1, h2, #root > :where(p, code)  {
+  text-align: center;
+}
+
+#order-by {
+  margin: 2em 0 0.5em 0;
   text-align: center;
 }
 
 .node-type_doc {
-  color: #a8a8de;;
+  color: light-dark(black, #a8a8de);
+}
+
+#root > .node-list {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  min-height: 300px;
+  min-width: 400px;
+
+  .node-list {
+    border: 1px solid transparent;
+    border-left: 2px solid transparent;
+  }
 }
 
 .node-list {
-  border: 1px solid #484848;
+  border: 1px solid #000000ff;
   background-color: #2d2d2d;
-  padding: 0.25em 1em;
+  padding: 0.25em 0em 0.25em 0.5em;
+}
+
+/* UI: Hint the holder is open. The line encapsulates what's in it */
+#root .node-type_folder > .node-list:has( > details[open]) {
+  border-left: 2px solid #393535;
+}
+
+.node-list ul > li {
+  text-align: left;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin-left: calc(1em * var(--indentBy));
+}
+
+.list-nodes > li {
+  padding-left: 1em;
+  //background-color: light-dark(white, black);
+
+  &:not(.node-type_folder)::before {
+    display: inline-block;
+    content: "📦";
+    margin-right: 0.25em;
+  }
+}
+
+/* Fancy Icons for open and closed folders */
+details {
+  > summary {
+    cursor: pointer;
+    transition: color 250ms;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  > summary::before {
+    content: "📁";
+    display: inline-block;
+    margin-right: 0.25em;
+  }
+  &[open] > summary::before {
+    content: "📂";
+  }
 }
