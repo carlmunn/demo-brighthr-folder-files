@@ -37,6 +37,10 @@ code {
   color: #b3c156;;
 }
 
+input, select {
+  padding: 0.25em;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

@@ -16,11 +16,6 @@ h1, h2, #root > :where(p, code)  {
   text-align: center;
 }
 
-#order-by {
-  margin: 2em 0 0.5em 0;
-  text-align: center;
-}
-
 .node-type_doc {
   color: light-dark(black, #a8a8de);
 }
@@ -57,7 +52,6 @@ h1, h2, #root > :where(p, code)  {
 
 .list-nodes > li {
   padding-left: 1em;
-  //background-color: light-dark(white, black);
 
   &:not(.node-type_folder)::before {
     display: inline-block;
@@ -84,5 +78,37 @@ details {
   }
   &[open] > summary::before {
     content: "📂";
+  }
+}
+
+/* ---------------------------------------------------------------------------*/
+
+#node-options {
+  border: 1px solid #0d0d0d;
+  display: flex;
+  margin: 2em 0 0.5em 0;
+  background-color: #1b1b1b61;
+  backdrop-filter: blur(3px);
+
+  > section {
+    padding: 0.5em;
+  }
+}
+
+#filter {
+  flex: 1;
+  display: flex;
+  label {
+    margin-right: 0.25em;
+  }
+}
+
+#order-by {
+  text-align: center;
+
+  label {
+    margin-right: 0.25em;
+    color: #989898;
+    font-size: 0.9em;
   }
 }

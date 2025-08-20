@@ -3,6 +3,7 @@ import {apiGet} from '@/services/api.ts'
 import {type Node} from '@/types/nodes'
 import NodeList from '@/components/NodeList'
 import {logDebug} from '@/utilities/logging'
+import ListOptions from '@/components/ListOptions'
 
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
@@ -33,22 +34,22 @@ function App() {
     })()
   }, []);
 
+  const onChange = function({name, orderBy} : {name: string, orderBy: string}) : void {
+    console.info('Called onChange', {name, orderBy})
+
+    if(name.length) { console.info('FILTER BY NAME:', name) }
+    if(orderBy.length) { console.info('ORDER BY:', orderBy) }
+
+    setNodes([...nodes])
+  }
+
   return (
     <>
       <h1>Demo Task</h1>
       <p>By Carl Munn</p>
       <p> (<a href='https://github.com/brighthr/Front-End-Tech-Tasks/blob/main/junior-and-middleweight.md' target='_blank'>GitHub</a>)</p>
       <code>node COUNT={nodes.length}</code>
-
-      <section id='order-by'>
-        <label htmlFor="order-by">Order</label>
-        <select name='order-by'>
-          <option value="name">Name</option>
-          <option value="date">Date</option>
-          <option value="type">Type</option>
-        </select>
-      </section>
-
+      <ListOptions onChange={onChange}/>
       <NodeList name='root' nodes={nodes} orderBy={ orderBy }/>
     </>
   )

@@ -43,9 +43,9 @@ const NodeList = function(props: NodeListProps){
 
       <ul className='list-nodes'>
         { sortedNodes.map((node, idx) => {
-          console.info(node.type)
+
           if(node.type === 'folder')
-            return <li className={`node-type_${node.type}`}>
+            return <li key={idx} className={`node-type_${node.type}`}>
               <NodeList
                       name={node.name}
                       indentBy={indentBy}
