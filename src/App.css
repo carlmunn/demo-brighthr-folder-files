@@ -25,7 +25,7 @@ p.reference:hover > a {
 }
 
 li:not(.node-type_folder) {
-  color: light-dark(black, #a8a8de);
+  color: a8a8de;
 }
 
 #root > .node-list {
