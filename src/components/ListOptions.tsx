@@ -19,7 +19,7 @@ const ListOptions = function(props: {onChange: (opts: any)=>void }){
           onChange={ (evt) => { setfilterName(evt.target.value) } }
           name='filter-name'
           type="text"
-          placeholder="Filter names"
+          placeholder="Filter file names"
           tabIndex={1}
         />
       </section>
@@ -31,7 +31,7 @@ const ListOptions = function(props: {onChange: (opts: any)=>void }){
                 name='order-by'
                 onChange={ (evt) => { setOrderBy(evt.target.value) } }
                 tabIndex={2}>
-          <option value="name">Name</option>
+          <option value="name">Name (a→z)</option>
           <option value="added">Newest First</option>
         </select>
       </section>
