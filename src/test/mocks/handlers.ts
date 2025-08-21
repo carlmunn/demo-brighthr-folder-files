@@ -8,8 +8,6 @@ export const handlers = [
 
     const data = fs.readFileSync(dataFile, {encoding: 'utf-8'})
 
-    //console.info('DEBUG:', JSON.parse(data))
-
     return HttpResponse.json(JSON.parse(data))
   }),
 ]

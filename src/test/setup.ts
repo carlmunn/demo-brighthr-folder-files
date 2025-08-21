@@ -1,4 +1,3 @@
-// src/test/setup.ts
 import '@testing-library/jest-dom'
 import { expect, afterEach, beforeAll, afterAll } from 'vitest'
 import { server } from '@/test/mocks/node.ts'

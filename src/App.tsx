@@ -34,24 +34,22 @@ function App() {
   }, []);
 
   const onChange = function({name, orderBy} : {name: string, orderBy: string}) : void {
-    console.info('Called onChange', {name, orderBy})
-
     let newNodes : Node[]
 
     newNodes = filterNodesByName(nodes, name)
     newNodes = orderNodesBy(newNodes, orderBy)
-    console.info('newNodes', newNodes)
+
     setNodes(newNodes)
   }
 
   return (
     <>
-      <h1>Demo Task</h1>
-      <p>By Carl Munn</p>
-      <p> (<a href='https://github.com/brighthr/Front-End-Tech-Tasks/blob/main/junior-and-middleweight.md' target='_blank'>GitHub</a>)</p>
-      <code>node COUNT={nodes.length}</code>
+      <h1>BrightHR <br/>Files and Folders Demo</h1>
+      <p className='author'>By Carl Munn</p>
+      <p className='reference'> (<a href='https://github.com/brighthr/Front-End-Tech-Tasks/blob/main/junior-and-middleweight.md' target='_blank'>GitHub</a>)</p>
+
       <ListOptions onChange={onChange}/>
-      <NodeList name='root' nodes={nodes} orderBy={ 'name' }/>
+      <NodeList name='BrightHR files' nodes={nodes} orderBy={ 'name' }/>
     </>
   )
 }
