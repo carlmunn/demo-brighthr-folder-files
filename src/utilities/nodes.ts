@@ -33,7 +33,6 @@ export function orderNodesBy(nodes: Node[], orderBy: string, direction?: 'DESC' 
 
   // Sort the current level
   newNodes.sort((a, b) => {
-    console.info('orderBy', orderBy, direction)
     if (orderBy === 'name') {
       const nameA = a.name.toLowerCase();
       const nameB = b.name.toLowerCase();

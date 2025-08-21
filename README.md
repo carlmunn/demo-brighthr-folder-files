@@ -32,13 +32,25 @@ I developed in sprints: plain, prototype, test, prototype, test. refactor. docum
 - Using vitest ([docs](https://vitest.dev/api/expect.html))
 - Each file's tests are located in a relative directory called `__tests__`
 - Run tests with `npm run test`
+- Use `#only` to isolate a test
+- I have left some tests out that are similar to other tests
+  - ie, ordering by 'name' and 'added' are similar so one has more testing than the other
+- Using `test/test_data.ts` to keep data in one place
+
+### TODOs
+More for robustness
+- Test with a future dates
+- Test with corrupted structure
+- Test with non ASCII or standard character tests
+- Test with long file names or missing
 
 ## Notes
 - This GitHub [repo](https://github.com/carlmunn/demo-brighthr-folder-files)
 - Templates off Vite
-- I would normally place CSS with the React components. I just used a god file.
+- I would normally place CSS with the React components. I just used a [god object](https://en.wikipedia.org/wiki/God_object).
 - The theme/color is not suitable for accessibility (low contrast). More work on CSS would be needed
 - TypeScript
+- `#filterNodesByName` does not filter out nodes, it only sets the 'hidden' field to true/false
 - Using Git
 - Open and close folders via `<details>` and `<summary>` HTML tags
   - I would normally use a `table` since it works with columns (name, date, extension). Just went with a simple "filename.ext [Date]"
