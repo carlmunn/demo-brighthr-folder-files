@@ -45,7 +45,7 @@ const NodeList = function(props: NodeListProps){
               style={ {'--indentBy': indentBy} as React.CSSProperties}
               className={classList.join(' ')}
               title={`File added ${node.added}`}>
-                { node.name } [{node.added}]
+                { node.name }.{ node.type } <span className='date-added'>Added {node.added}</span>
               </li>)
         }) }
       </ul>
