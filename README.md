@@ -24,6 +24,7 @@ Simple web page to list file and folders with features to sort and filter files 
 ### TODOs
 - The initial page load doesn't trigger a sort of 'name'
 - Better favicon
+- When no files where found via filter it should give feedback. ie, "No files found"
 
 ### Development process
 I prototyped and then tested. TDD wasn't necessary since prototyping was quicker for this task. Refactoring was done with the help of tests to make sure nothing broke while cleaning up afterwards. Tests in this scenario would be used to guard against regression and future proof later changes. If the API was more complicated and live TDD would be necessary.
@@ -70,5 +71,5 @@ Additional tests for robustness
 - React has a Chrome extension for debugging, but I didn’t need to use it
 - Ordering and filtering is only applied to files, not folders.
 - Assumed modern browsers
-  - Used Emojis
+  - Used Emojis. Open folder / Close folder
   - Used https://shapecatcher.com/ for unicode arrow
