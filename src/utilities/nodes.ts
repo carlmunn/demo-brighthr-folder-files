@@ -17,6 +17,8 @@ const allVisible = function(nodes: Node[]) : Node[] {
 }
 
 export function orderNodesBy(nodes: Node[], orderBy: string, direction?: 'DESC' | 'ASC') : Node[] {
+  direction ??= 'ASC'
+
   // Create a deep copy to avoid mutating original
   const newNodes = nodes.map(node => {
     const copiedNode = { ...node };
@@ -31,11 +33,12 @@ export function orderNodesBy(nodes: Node[], orderBy: string, direction?: 'DESC' 
 
   // Sort the current level
   newNodes.sort((a, b) => {
+    console.info('orderBy', orderBy, direction)
     if (orderBy === 'name') {
       const nameA = a.name.toLowerCase();
       const nameB = b.name.toLowerCase();
 
-      if (direction === 'DESC') {
+      if (direction === 'ASC') {
         return nameA.localeCompare(nameB);
       } else {
         return nameB.localeCompare(nameA);
@@ -50,7 +53,7 @@ export function orderNodesBy(nodes: Node[], orderBy: string, direction?: 'DESC' 
       const timeA = isNaN(dateA.getTime()) ? 0 : dateA.getTime();
       const timeB = isNaN(dateB.getTime()) ? 0 : dateB.getTime();
 
-      if (direction === 'ASC') {
+      if (direction === 'DESC') {
         return timeA - timeB;
       } else {
         return timeB - timeA;
