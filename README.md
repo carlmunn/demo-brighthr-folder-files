@@ -4,6 +4,8 @@
 
 Simple web page to list file and folders with features to sort and filter files based on specs located on GitHub [repo](https://github.com/brighthr/Front-End-Tech-Tasks/blob/main/junior-and-middleweight.md)
 
+![Image](./media/example-screenshot.png)
+
 ## Usage
 - Environment setup first. Node and npm (See Development section below)
 - Setup first with `npm install`
