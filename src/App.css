@@ -8,15 +8,23 @@
   padding: 2rem;
 }
 
-code {
-  display: block;
-}
-
-h1, h2, #root > :where(p, code)  {
+h1,
+h2,
+#root > :where(p.author, p.reference)  {
   text-align: center;
 }
 
-.node-type_doc {
+p.author, p.reference, p.reference > a {
+  color: #a471ff;
+  font-size: 0.9em;
+}
+
+p.reference:hover > a {
+  text-decoration: underline;
+  color: blue;
+}
+
+li:not(.node-type_folder) {
   color: light-dark(black, #a8a8de);
 }
 
@@ -68,6 +76,7 @@ details {
 
     &:hover {
       color: white;
+      text-decoration: underline;
     }
   }
 
@@ -110,5 +119,22 @@ details {
     margin-right: 0.25em;
     color: #989898;
     font-size: 0.9em;
+  }
+}
+
+
+.list-nodes > li {
+  > .date-added {
+    color: #5a5a5aff;
+    background-color: #1b1b1bff;
+    border-radius: 3px;
+    margin-left:  0.3em;
+    padding: 0.1em 0.3em;
+    transition: color 300ms;
+    font-size: 0.9em;
+  }
+
+  &:hover > .date-added {
+    color: #ffffff;
   }
 }
