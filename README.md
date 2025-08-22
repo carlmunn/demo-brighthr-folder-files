@@ -65,11 +65,19 @@ Additional tests for robustness
   - See the filter/sort utility functions and the NodeList for recursion calls.
 - Using path aliases for imports. Defined for TypeScript and Vite (Personal preference)
 - Original specs at GitHub [repo](https://github.com/brighthr/Front-End-Tech-Tasks/blob/main/junior-and-middleweight.md)
-- I was tempted to have all this in a Docker image for easier demoing but it's outside the scope.
-  - For deployment, I would use a Docker container service for this (AWS/Azure/etc)
+- For deployment, I would use a Docker container service for this (AWS/Azure/etc)
 - Debouncing the filtering sorting would be wise if there was more data. Prevents events from firing on each keypress/change
 - React has a Chrome extension for debugging, but I didn’t need to use it
 - Ordering and filtering is only applied to files, not folders.
 - Assumed modern browsers
   - Used Emojis. Open folder / Close folder
   - Used https://shapecatcher.com/ for unicode arrow
+
+# Docker
+
+- Quickest: Pull and run from Docker hub
+  - Run with `docker run -it --rm -p 8080:80 carlmunn/demo-brighthr-folder-files-web:latest`
+  - Then point browser to `http://localhost:8080`
+- Used Docker v28.3.2
+- Build with `docker build -t demo-brighthr .`
+- Compose with `docker compose up --build`
