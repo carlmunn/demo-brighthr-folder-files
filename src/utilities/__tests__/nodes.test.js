@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import {orderNodesBy, filterNodesByName} from '@/utilities/nodes.ts'
 
-import testData from '@/test/test_data.ts'
+import testData from '@test/test_data.ts'
 
 // TODO:
 // Test with folder and files (recursion)

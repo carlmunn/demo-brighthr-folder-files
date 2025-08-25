@@ -68,6 +68,8 @@ li:not(.node-type_folder) {
   }
 }
 
+/* --------------------------------- Custom --------------------------------- */
+
 /* Fancy Icons for open and closed folders */
 details {
   > summary {
@@ -89,8 +91,6 @@ details {
     content: "📂";
   }
 }
-
-/* ---------------------------------------------------------------------------*/
 
 #node-options {
   border: 1px solid #0d0d0d;

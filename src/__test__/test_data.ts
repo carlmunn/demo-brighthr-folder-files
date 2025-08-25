@@ -1,4 +1,6 @@
-const FAKE_API_SINGLE_FILE = [
+import type { Node } from "@/types/nodes"
+
+const FAKE_API_SINGLE_FILE : Node[] = [
   {
     "type": "pdf",
     "name": "Simple Test File",
@@ -6,7 +8,7 @@ const FAKE_API_SINGLE_FILE = [
   }
 ]
 
-const FAKE_API_MULTI_FILES = [
+const FAKE_API_MULTI_FILES : Node[] = [
   {
     "type": "pdf",
     "name": "00 Simple Test File",
@@ -20,7 +22,7 @@ const FAKE_API_MULTI_FILES = [
 ]
 
 // 'name' and 'added' have been placed purposely for order testing
-const FAKE_API_MULTI_FILES_UNORDERED = [
+const FAKE_API_MULTI_FILES_UNORDERED : Node[] = [
   {
     "type": "pdf",
     "name": "AAA First File",
@@ -38,7 +40,7 @@ const FAKE_API_MULTI_FILES_UNORDERED = [
   }
 ]
 
-const FAKE_API_FOLDER_AND_FILES = [
+const FAKE_API_FOLDER_AND_FILES : Node[] = [
   {
     "type": "pdf",
     "name": "File Level 1",

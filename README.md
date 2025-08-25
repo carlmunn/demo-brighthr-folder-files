@@ -51,6 +51,7 @@ Additional tests for robustness
 - This GitHub [repo](https://github.com/carlmunn/demo-brighthr-folder-files)
 - Templates off Vite
 - I would normally place CSS with the React components, but for this demo I used a [god object](https://en.wikipedia.org/wiki/God_object).
+- CSS: Using BEM (Block, Element, Modifier) for naming things.
 - The theme/color is not suitable for accessibility (low contrast). More work on CSS would be needed
 - TypeScript
 - `#filterNodesByName` does not filter out nodes, it only sets the 'hidden' field to true/false

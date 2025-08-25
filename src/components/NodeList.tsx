@@ -2,10 +2,10 @@ import { useState } from 'react'
 import {type Node} from '@/types/nodes.ts'
 
 interface NodeListProps {
-  name?: string | null;
+  name?: string | null; // Ideally have set but if not it won't break things
   nodes?: Node[];
   orderBy?: string;
-  indentBy?: number;
+  indentBy?: number; // Used for CSS variables (--indentBy)
 }
 
 const NodeList = function(props: NodeListProps){
@@ -13,8 +13,9 @@ const NodeList = function(props: NodeListProps){
   const name: string | null = props?.name || null
   const nodes: Node[] = props?.nodes || []
 
-  // Not adding an event to change state. This will mean
-  // any refreshing/render calls will close the list
+  // Not adding an event to change <details> 'state'. This will mean
+  // any refreshing/render calls will close the list.
+  //
   const [openState, _setOpenState] = useState(false)
 
   // Using CSS variable --indentBy to push the element right to help with
